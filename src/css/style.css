@@ -1,0 +1,879 @@
+:root{
+    --tx: #f7f7f7;
+    --bg: #ee5d00;
+    --bgr: linear-gradient(140deg,#ee5d00,#fca302);
+    --bgt: transparent;
+    --h1: 'Roboto';
+    --fwb:600;
+    --ftt:400;
+    --tlb:21px;
+    --tl:14px;
+    --tl-h:16px;
+    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.parent{
+    width: 100%;
+    height:100vh;
+    background: var(--bgr);
+}
+.parent header{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.parent header .navbar{
+    width: 100%;
+    height: 9vh;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+}
+.content-wrapper {
+    width: 100%;
+    margin-top: 9vh;
+}
+.parent header .navbar .wrapper{
+    width: 100%;
+    max-width: 1070px;
+    margin: auto;
+}
+.parent header .navbar .wrapper-nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+.parent header .navbar .wrapper-nav nav{
+    width: 30%;
+}
+.parent header .navbar .wrapper-nav nav #menu{
+    display: flex;
+    justify-content: space-around;
+}
+.parent header .navbar .wrapper-nav nav #menu .lien{
+    text-decoration: none;
+    color: var(--tx);
+    font-size: var(--tl-h);
+    font-family: var(--font);
+    font-weight: var(--fwb);
+    margin-bottom: 8px;
+}
+.parent header .navbar .wrapper-nav nav #menu .lien:hover{
+    transition: all .8s linear;
+    border-bottom:2px solid var(--tx);
+}
+.parent header .navbar .wrapper-nav .btn-cnx{
+    width: 20%;
+}
+.parent header .navbar .wrapper-nav .btn-cnx .affiche{
+    width: 100%;
+    height: 35px;
+    background: #f7f7f76e;
+    border: none;
+    border-radius: 100px;
+    font-weight: var(--fwb);
+    color: var(--tx);
+    box-shadow:0 0 30px -3px #131216;
+    cursor: pointer;
+    transition: all .8s ease-in-out;
+}
+.parent header .navbar .wrapper-nav .btn-cnx .affiche:hover{
+    border: 1px solid #f7f7f7;
+    background: transparent;
+    box-shadow: none;
+}
+.parent header .navbar .wrapper-nav .btn-cnx .affiche .telephone{
+    text-decoration: none;
+    color: #f7f7f7;
+}
+/* Acceuil */
+.accueil-container {
+    width: 100%;
+    background: var(--bgr);
+    min-height: auto;
+    padding: 0;
+}
+
+.accueil-container .accueil-header {
+    position: relative;
+    height: auto;
+    min-height: 85vh;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.accueil-container .accueil-header .images {
+    position: relative;
+    width: 45%;
+    height: auto;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: ima 2s ease-out;
+}
+
+.accueil-container .accueil-header .images #photoProfessionnel {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    filter: brightness(90%) saturate(120%);
+}
+
+.accueil-container .accueil-header .expression {
+    width: 55%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.accueil-container .accueil-header .expression .wrapper {
+    width: 100%;
+}
+
+.accueil-container .accueil-header .expression .wrapper .context {
+    width: 100%;
+    animation: modalApparition 0.8s ease-out;
+}
+@keyframes modalApparition {
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ima {
+    from{
+        opacity: 0;
+        transform: rotateY(-120deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
+.accueil-container .accueil-header .expression .wrapper .context .identity {
+    font-family: 'poppins Thin';
+    color: var(--tx);
+    font-weight: 500;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.accueil-container .accueil-header .expression .wrapper .context .employe {
+    font-family: var(--font);
+    font-size: 45px;
+    color: var(--tx);
+    margin: 20px 0;
+    font-weight: var(--fwb);
+}
+
+.accueil-container .accueil-header .expression .wrapper .context .text {
+    color: var(--tx);
+    font-family: 'poppins Thin';
+    margin: 30px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.accueil-container .accueil-header .expression .wrapper .context .lien {
+    text-decoration: none;
+    color: #f7f7f7;
+    background: #f7f7f73f;
+    padding: 15px 50px;
+    border-radius: 12px;
+    font-family: var(--font);
+    display: inline-block;
+    transition: all 0.8s ease;
+    border: 1px solid transparent;
+}
+
+.accueil-container .accueil-header .expression .wrapper .context .lien:hover {
+    transition: all .8s linear;
+    border: 1px solid var(--tx);
+    background: transparent;
+}
+/* Projets */
+.projets-container {
+    width: 100%;
+    background: var(--bgr);
+    min-height: 100vh;
+    padding-top: 9vh;
+    padding: 60px 20px;
+}
+
+.projets-container .wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.parent header .wrapper .guide-projet{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 10% 0;
+    gap: 25px;
+}
+
+.projets-container .wrapper .guide-projet {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    gap: 25px;
+}
+.parent header .wrapper .guide-projet .card{
+    width: 100%;
+    height: 400px;
+    background: #ad4809b6;
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.parent header .wrapper .guide-projet .card .title{
+    font-size: var(--tl-h);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--tx);
+}
+.parent header .wrapper .guide-projet .card .tx{
+    text-align: left;
+    margin: 30px 0;
+    font-family: 'poppins Thin';
+    font-weight: var(--fwb);
+    color: #27150a;
+    animation: modalApparition 0.8s ease-out;
+}
+
+/* Contact Page */
+.contact-page {
+    width: 100%;
+    background: linear-gradient(135deg, #ee5d00, #fca302);
+    color: var(--tx);
+    font-family: var(--font);
+}
+
+.contact-hero {
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(140deg, #ee5d00, #fca302);
+    text-align: center;
+    animation: modalApparition 0.8s ease-out;
+}
+
+.contact-hero .contact-container h1 {
+    font-size: 3.5rem;
+    font-weight: var(--fwb);
+    margin-bottom: 15px;
+    color: var(--tx);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-hero .contact-container .job-title {
+    font-size: 1.5rem;
+    color: #f7f7f766;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.contact-content {
+    width: 100%;
+    padding: 60px 20px;
+    background: #1a1a1a;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.contact-section {
+    background: rgba(238, 93, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--bg);
+    animation: modalApparition 0.8s ease-out;
+}
+
+.contact-section h2 {
+    font-size: 1.8rem;
+    color: var(--bg);
+    margin-bottom: 20px;
+    font-weight: var(--fwb);
+}
+
+.contact-section p {
+    color: #d0d0d0;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skills-category h3 {
+    color: var(--bg);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.skills-category ul {
+    list-style: none;
+}
+
+.skills-category li {
+    padding: 8px 0;
+    color: #d0d0d0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skills-category li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--bg);
+    font-weight: bold;
+}
+
+.contact-info {
+    background: rgba(238, 93, 0, 0.15);
+    padding: 50px;
+    border-radius: 12px;
+    border-top: 4px solid var(--bg);
+    animation: modalApparition 0.8s ease-out;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: var(--bg);
+    margin-bottom: 40px;
+    font-weight: var(--fwb);
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(238, 93, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.info-item h3 {
+    color: var(--bg);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.info-item a {
+    color: var(--tx);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: block;
+    word-break: break-word;
+}
+
+.info-item a:hover {
+    color: var(--bg);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-hero .contact-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        padding: 30px;
+    }
+}
+
+/* ============== RESPONSIVE DESIGN ============== */
+
+/* Mobile Navbar */
+@media (max-width: 1024px) {
+    .parent header .navbar .wrapper-nav nav {
+        width: 50%;
+    }
+
+    .parent header .navbar .wrapper-nav nav #menu .lien {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .parent header .navbar .wrapper-nav .btn-cnx {
+        width: auto;
+    }
+
+    .parent header .navbar .wrapper-nav .btn-cnx .affiche {
+        padding: 10px 20px;
+        font-size: 12px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar Responsive */
+    .parent header .navbar {
+        height: auto;
+        background: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+    }
+
+    .parent header .navbar .wrapper {
+        padding: 0 15px;
+    }
+
+    .parent header .navbar .wrapper-nav {
+        padding: 15px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .parent header .navbar .wrapper-nav nav {
+        width: 100%;
+    }
+
+    .parent header .navbar .wrapper-nav nav #menu {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .parent header .navbar .wrapper-nav nav #menu .lien {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    .parent header .navbar .wrapper-nav .btn-cnx {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .parent header .navbar .wrapper-nav .btn-cnx .affiche {
+        width: 100%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .content-wrapper {
+        margin-top: auto;
+    }
+
+    /* Accueil Page Responsive */
+    .accueil-container {
+        padding-top: 0;
+    }
+
+    .accueil-container .accueil-header {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .accueil-container .accueil-header .images {
+        width: 100%;
+        position: relative;
+        order: 1;
+    }
+
+    .accueil-container .accueil-header .images #photoProfessionnel {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .accueil-container .accueil-header .expression {
+        width: 100%;
+        text-align: center;
+        order: 2;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .employe {
+        font-size: 32px;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .identity {
+        font-size: 14px;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .text {
+        font-size: 14px;
+        margin: 20px 0;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .lien {
+        padding: 12px 40px;
+        font-size: 13px;
+    }
+
+    /* Projets Page Responsive */
+    .projets-container {
+        padding: 30px 15px;
+    }
+
+    .projets-container .wrapper {
+        max-width: 100%;
+    }
+
+    .parent header .wrapper .guide-projet {
+        flex-direction: column;
+        margin: 20px 0;
+        gap: 20px;
+    }
+
+    .parent header .wrapper .guide-projet .card {
+        width: 100%;
+        height: auto;
+        min-height: 280px;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .parent header .wrapper .guide-projet .card .title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .parent header .wrapper .guide-projet .card .tx {
+        margin: 15px 0;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* Contact Page Responsive */
+    .contact-hero {
+        padding: 40px 15px;
+    }
+
+    .contact-hero .contact-container h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .contact-hero .contact-container .job-title {
+        font-size: 1.2rem;
+    }
+
+    .contact-content {
+        padding: 40px 15px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .contact-section {
+        padding: 20px;
+        border-left: 3px solid var(--bg);
+    }
+
+    .contact-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-section p {
+        font-size: 0.95rem;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .contact-info {
+        padding: 25px;
+        border-top: 3px solid var(--bg);
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .info-item {
+        padding: 20px;
+    }
+
+    .info-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    .info-item a {
+        font-size: 1rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    :root {
+        --tlb: 18px;
+        --tl: 12px;
+        --tl-h: 14px;
+    }
+
+    .parent {
+        height: auto;
+    }
+
+    .parent header .navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .parent header .navbar .wrapper-nav {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .parent header .navbar .wrapper-nav nav {
+        width: 100%;
+    }
+
+    .parent header .navbar .wrapper-nav nav #menu {
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .parent header .navbar .wrapper-nav nav #menu .lien {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .parent header .navbar .wrapper-nav .btn-cnx .affiche {
+        font-size: 11px;
+        padding: 10px 15px;
+        height: 35px;
+    }
+
+    .content-wrapper {
+        margin-top: 15vh;
+    }
+
+    /* Accueil */
+    .accueil-container .accueil-header {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+
+    .accueil-container .accueil-header .images #photoProfessionnel {
+        max-width: 150px;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .employe {
+        font-size: 22px;
+        margin: 15px 0;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .identity {
+        font-size: 13px;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .text {
+        font-size: 12px;
+        margin: 15px 0;
+    }
+
+    .accueil-container .accueil-header .expression .wrapper .context .lien {
+        padding: 12px 25px;
+        font-size: 12px;
+    }
+
+    /* Projets */
+    .projets-container {
+        padding: 20px 10px;
+    }
+
+    .parent header .wrapper .guide-projet .card {
+        min-height: 250px;
+        padding: 15px;
+    }
+
+    .parent header .wrapper .guide-projet .card .title {
+        font-size: 14px;
+    }
+
+    .parent header .wrapper .guide-projet .card .tx {
+        font-size: 12px;
+    }
+
+    /* Contact */
+    .contact-hero {
+        padding: 25px 10px;
+    }
+
+    .contact-hero .contact-container h1 {
+        font-size: 1.7rem;
+    }
+
+    .contact-hero .contact-container .job-title {
+        font-size: 1rem;
+    }
+
+    .contact-content {
+        padding: 25px 10px;
+    }
+
+    .contact-grid {
+        gap: 20px;
+    }
+
+    .contact-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .contact-section p {
+        font-size: 0.9rem;
+    }
+
+    .contact-info {
+        padding: 15px;
+    }
+
+    .contact-info h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .info-item {
+        padding: 15px;
+    }
+
+    .info-item h3 {
+        font-size: 1rem;
+    }
+
+    .info-item a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablet Landscape and Medium Screens */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .accueil-container .accueil-header {
+        flex-direction: row;
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .accueil-container .accueil-header .images {
+        width: 40%;
+    }
+
+    .accueil-container .accueil-header .expression {
+        width: 60%;
+    }
+
+    .parent header .navbar .wrapper-nav nav #menu {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .parent header .navbar .wrapper-nav nav #menu .lien {
+        margin: 0 5px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1201px) {
+    .accueil-container .accueil-header {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .projets-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .contact-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .parent header .wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
